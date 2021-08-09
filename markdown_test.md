@@ -46,3 +46,14 @@ a | b
 [1,2,3] | [1,1]
 [2,3,4] | [2,2]
 
+After `elif company == 'leibnizgmbh':`, add another `elif` condition:
+```python
+elif company == 'benthamplc':
+        price_group =  db.query('benthamplc', customer_id)['price_group']
+        raw = requests.get('https://mockend.com/prmsolutions/custom-pricing-challenge/Bentham ',
+                            params={'client_pricing_segment_eq' : price_group, 
+                                    'product_code_eq' : product_id}).json()
+        return raw[0]['product_price']
+```
+
+
